@@ -1,15 +1,18 @@
-const BASE_URL = "http://localhost:8000/api/v1/titles"
+const BASE_URL = "http://localhost:8000/api/v1/titles/?sort_by=-imdb_score"
 
-async function getBestMovie() {
-  try {
-  const response = await axios.get("http://localhost:8000/api/v1/titles/499549");
-  const title = response.data.title;
-  console.log('Movie title:', title);
-  return title
-} catch(errors) {
-  console.error(errors);
+axios.get(BASE_URL)
+.then((response) => { showBestMovie(response.data.results[0]) })
+.catch((errors) => console.log(errors))
+
+function showBestMovie(bestMovieData) {
+  console.log(bestMovieData.title);
+  console.log(bestMovieData.image_url)
+  str = ' ' + bestMovieData.title + ' ';
+  img_url = '' + bestMovieData.image_url + '';
+
+  bestMovie = document.getElementById('best-movie-title')
+  bestMovie.innerHTML = str
+  let img = document.createElement('img');
+  img.src = img_url
+  bestMovie.appendChild(img);
 }
-};
-
-const best_movie = document.getElementById("best-movie")
-best_movie.innerHTML = getBestMovie();

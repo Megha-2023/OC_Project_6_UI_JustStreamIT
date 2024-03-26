@@ -38,3 +38,7 @@ img {
 .nav_links li a:hover {
   color: #43b560;
 }
+.banner{
+  color: blue;
+  font-size: larger;
+}

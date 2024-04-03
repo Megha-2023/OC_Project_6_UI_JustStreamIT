@@ -23,12 +23,26 @@
         </ul>
       </nav>
     </div>
-    <p id="best-movie-title" class="banner">
-      <img id="best-movie-img">
-
+    <section class="banner">
+      <p id="best-movie-title" class="best-movie-title">
+        <p class="best-movie-genre"></p>
+        <div class="best-movie-img">
+          <button class="play_now">Watch Now</button>
+          <button id="more-details" class="play_now">More Details</button>
+          
+          <img id="best-movie-img" alt="Best Rated Movie"></img>
         
-    </p>
+        </div>
+      </p>
+    </section>
+    <!-- Create Modal window to display Movie details-->
+    <div id="movie-modal" class="modal">
+      <button id="close" type="button" class="close" data-dismiss="modal">&times;</button>
+      <table id="description" class="details_table">
+        <h1>Movie Details</h1>
+      </table>
     </div>
+    
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="script.js"></script>
   </body>

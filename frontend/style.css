@@ -1,10 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Nova+Round&display=swap");
-* {
+body {
   padding: 0;
-  margin: 0;
+  margin: 0 auto;
+  justify-content: center;
   box-sizing: border-box;
   scroll-behavior: smooth;
   font-family: "Nova Round", system-ui;
+  background-color: black;
 }
 
 .header-container {
@@ -12,7 +14,8 @@
   height: 100px;
   align-items: center;
   width: 100%;
-  background-color: dimgrey;
+  background-color: rgb(243, 82, 189);
+  font-size: medium;
 }
 
 img {
@@ -28,17 +31,57 @@ img {
   display: inline-block;
   padding: 0px 20px;
 }
-
 .nav_links li a {
   color: antiquewhite;
   font-size: 30px;
   transition: all 0.3s ease 0s;
 }
-
 .nav_links li a:hover {
   color: #43b560;
 }
 .banner{
-  color: blue;
-  font-size: larger;
+  width: 100%;
+  height: 300px;
+  align-items: center;
+  display: flex;
+  overflow: hidden;
+  justify-content: space-between;
+  background-color: rgb(57, 59, 56);
+}
+.best-movie-title{
+  position: relative;
+  font-size: x-large;
+  color: rgb(219, 32, 188);
+}
+.best-movie-img{
+  width: 40%;
+
+}
+.best-movie-img img {
+  position: relative;
+  height: 250px;
+  width: 250px;
+  object-fit: cover;
+}
+.play_now{
+  width: 100px;
+  height: 50px;
+  border-radius: 20%;
+  font-size: medium;
+  background-color: rgb(236, 56, 191);
+}
+.modal {
+  display: none; /* Hidden by default */
+  position: absolute; /* Stay in place */
+  left: 25%;
+  top: 50px;
+  width: 50%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(233, 161, 223);
+}
+.details_table, td{
+  margin: 10px 10px;
+  padding: 10px;
+  border-radius: 5px;
 }

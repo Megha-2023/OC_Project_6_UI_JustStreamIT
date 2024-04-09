@@ -8,23 +8,25 @@ body {
   font-family: "Nova Round", system-ui;
   background-color: black;
 }
-
+h2{
+  color: rgb(236, 56, 191);
+}
 .header-container {
   display: flex;
-  height: 100px;
+  height: 75px;
   align-items: center;
   width: 100%;
   background-color: rgb(243, 82, 189);
   font-size: medium;
 }
 
-img {
-  margin-left: 5px;
+.header-container img {
+  margin-left: 1px;
   margin-right: auto;
   border-color: dimgrey;
   border-style: solid;
-  width: 150px;
-  height: 100px;
+  width: 140px;
+  height: 74px;
 }
 
 .nav_links li {
@@ -40,35 +42,40 @@ img {
   color: #43b560;
 }
 .banner{
-  width: 100%;
-  height: 300px;
+  margin: 10px 30px 10px 30px;
+  width: 95%;
+  height: 250px;
   align-items: center;
   display: flex;
   overflow: hidden;
   justify-content: space-between;
   background-color: rgb(57, 59, 56);
+  color: antiquewhite;
 }
 .best-movie-title{
   position: relative;
   font-size: x-large;
-  color: rgb(219, 32, 188);
+  font-style: italic;
+  color: rgb(238, 223, 235);
 }
 .best-movie-img{
   width: 40%;
-
 }
 .best-movie-img img {
+  margin-top: 2px;
   position: relative;
   height: 250px;
   width: 250px;
   object-fit: cover;
 }
 .play_now{
-  width: 100px;
+  position: relative;
+  width:fit-content;
   height: 50px;
   border-radius: 20%;
   font-size: medium;
   background-color: rgb(236, 56, 191);
+  font-weight: bold;
 }
 .modal {
   display: none; /* Hidden by default */
@@ -79,9 +86,43 @@ img {
   height: 100%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
   background-color: rgb(233, 161, 223);
+  border: 2px black solid;
 }
 .details_table, td{
   margin: 10px 10px;
   padding: 10px;
   border-radius: 5px;
+}
+.close{
+  width: fit-content;
+  height: fit-content;
+  font-size:medium;
+  font-weight: bold;
+  background-color:dimgrey;
+  color:aliceblue;
+}
+.top-rated-movie-img {
+  width: 100%;
+  object-fit: cover;
+}
+.carousel-btn-left, .carousel-btn-right {
+  cursor: pointer;
+  position: absolute;
+  width: auto;
+  height: 70px;
+  padding: 5px;
+  color:rgb(236, 56, 191);
+  font-weight: bold;
+  font-size: 30px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+.carousel-btn-right{
+  right: 0;
+  border-radius: 0 3px 3px 0;
+}
+.Category{
+  display: grid;
+  grid-row: 300px;
 }

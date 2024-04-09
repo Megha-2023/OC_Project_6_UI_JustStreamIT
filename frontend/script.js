@@ -32,7 +32,7 @@ function show_modal_window(movieData){
   var close_btn = document.getElementById("close");
   const description = document.getElementById("description");
 
-  descr_str = ("<tr><td>Movie: </td><td>" + movieData.title + "</td>" +
+  descr_str = ("<tr><td>Movie: </td><td>" + movieData.title + "</td><td><img src=" + movieData.image_url + "></img></td>" +
                 "<tr><td>Actors: </td><td>" + movieData.actors + "</td>" +
                 "<tr><td>Director: </td><td>" + movieData.directors + "</td>" +
                 "<tr><td>Release date: </td><td>" + movieData.date_published + "</td>" +

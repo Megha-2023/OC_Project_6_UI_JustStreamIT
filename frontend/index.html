@@ -10,7 +10,7 @@
   </head>
   <body>
     <div class="header-container">
-      <img src="logo.PNG" />
+      <img src="new_logo.png" />
       <nav>
         <ul class="nav_links">
           <li><a href="">HOME</a></li>
@@ -27,7 +27,7 @@
       <p id="best-movie-title" class="best-movie-title">
         <p class="best-movie-genre"></p>
         <div class="best-movie-img">
-          <button class="play_now">Watch Now</button>
+          <button class="play_now">Play Now</button>
           <button id="more-details" class="play_now">More Details</button>
           
           <img id="best-movie-img" alt="Best Rated Movie"></img>
@@ -35,9 +35,42 @@
         </div>
       </p>
     </section>
+    <section class="Category">
+      <!--Top Rated Movie Slider-->
+      <h2>Top Rated Movies</h2>
+      <div id="top-rated-carousel" class="category-movies">
+        <button id="top-rated-left" type="button" class="carousel-btn-left">&#10094;</button>
+        <ul class="top-rated-carousel"></ul>
+        <button id="top-rated-right" type="button" class="carousel-btn-right">&#10095;</button>
+      </div>
+
+      <!--Category1-->
+      <h2>Category 1</h2>
+      <div id="category1-carousel" class="category_movies">
+        <button id="category1-left" type="button" class="carousel-btn-left">&#10094;</button>
+        <ul class="category1-carousel"></ul>
+        <button id="category1-right" type="button" class="carousel-btn-right">&#10095;</button>
+      </div>
+
+      <!--Category2-->
+      <h2>Category 2</h2>
+      <div id="category2-carousel" class="category-movies">
+        <button id="category2-left" type="button" class="carousel-btn-left">&#10094;</button>
+        <ul class="category2-carousel"></ul>
+        <button id="category2-right" type="button" class="carousel-btn-right">&#10095;</button>
+      </div>
+
+      <!--Category3-->
+      <h2>Category 3</h2>
+      <div id="category3-carousel" class="category-movies">
+        <button id="category3-left" type="button" class="carousel-btn-left">&#10094;</button>
+        <ul class="category3-carousel"></ul>
+        <button id="category3-right" type="button" class="carousel-btn-right">&#10095;</button>
+      </div>
+    </section>
     <!-- Create Modal window to display Movie details-->
     <div id="movie-modal" class="modal">
-      <button id="close" type="button" class="close" data-dismiss="modal">&times;</button>
+      <button id="close" type="button" class="close" data-dismiss="modal">Close</button>
       <table id="description" class="details_table">
         <h1>Movie Details</h1>
       </table>

@@ -41,6 +41,10 @@ h2{
 .nav_links li a:hover {
   color: #43b560;
 }
+div{
+  display: block;
+  unicode-bidi: isolate;
+}
 .banner{
   margin: 10px 30px 10px 30px;
   width: 95%;
@@ -51,6 +55,7 @@ h2{
   justify-content: space-between;
   background-color: rgb(57, 59, 56);
   color: antiquewhite;
+  box-sizing: inherit;
 }
 .best-movie-title{
   position: relative;
@@ -109,8 +114,7 @@ h2{
   cursor: pointer;
   position: absolute;
   width: auto;
-  height: 70px;
-  padding: 5px;
+  height: 50px;
   color:rgb(236, 56, 191);
   font-weight: bold;
   font-size: 30px;
@@ -122,7 +126,16 @@ h2{
   right: 0;
   border-radius: 0 3px 3px 0;
 }
-.Category{
-  display: grid;
-  grid-row: 300px;
+.category-movies {
+  display: inline;
+}
+.top-rated-carousel{
+  position: relative;
+  margin-left: 60px;
+}
+.carousel-single-movie{
+  display: inline;
+  width: 153px;
+  height: 200px;
+  margin-right: 10px;
 }

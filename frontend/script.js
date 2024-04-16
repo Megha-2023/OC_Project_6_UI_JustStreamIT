@@ -1,12 +1,25 @@
-const BASE_URL = "http://localhost:8000/api/v1/titles/?sort_by=-imdb_score"
 
-axios.get(BASE_URL)
-.then((response) => { showBestMovie(response.data.results[0]) })
-.catch((errors) => console.log(errors))
+async function main(){
+  const BASE_URL = "http://localhost:8000/api/v1/titles/?sort_by=-imdb_score"
+
+  bestmovie_res = await axios.get("http://localhost:8000/api/v1/titles/?sort_by=-imdb_score");
+  showBestMovie(bestmovie_res.data.results[0]);
+  //.then((response) => { showBestMovie(response.data.results[0]) })
+  //.catch((errors) => console.log(errors))
+
+  topmovies_res_page1 = await axios.get("http://localhost:8000/api/v1/titles/?sort_by=-imdb_score");
+  topmovies_res_page2 = await axios.get("http://localhost:8000/api/v1/titles/?page=2&sort_by=-imdb_score");
+  movieCarousel(topmovies_res_page1.data.results, topmovies_res_page2.data.results);
+  //.then((response) => { movieCarousel(response.data.results, 1) })
+  //.catch((errors) => console.log(errors))
+
+  
+  //.then((response) => { movieCarousel(response.data.results, 2) })
+  //.catch((errors) => console.log(errors))
+}
 
 function showBestMovie(bestMovieData) {
-  console.log(bestMovieData.title);
-  console.log(bestMovieData.image_url);
+  try{
   str = ' ' + bestMovieData.title + ' ';
   img_url = '' + bestMovieData.image_url + '';
 
@@ -17,6 +30,32 @@ function showBestMovie(bestMovieData) {
   document.querySelector("#best-movie-img").src = img_url;
   get_movie_details(bestMovieData.id);
   show_modal_window(bestMovieData.id);
+  }
+  catch (errors) {
+    console.error(errors);
+  }
+}
+
+
+async function movieCarousel(movieData_page1, movieData_page2) {
+  let divCarousel = document.getElementById("Category0-carousel");
+  count = 0;
+  for (let i=1; i<=7; i++){
+    let divMovie = document.createElement("div");
+    divMovie.className = "carousel-single-movie";
+    let img = document.createElement("img");
+    if (i<=4)
+      url = movieData_page1[i].image_url;
+    else{
+      url = movieData_page2[count].image_url;
+      count += 1;
+    }
+    img.src = url;
+    img.className = "carousel-single-movie";
+    divMovie.appendChild(img);
+    divCarousel.appendChild(divMovie);
+    
+}
 }
 
 function get_movie_details(movieID) {
@@ -55,3 +94,5 @@ function show_modal_window(movieData){
     }
 }
 }
+
+main()

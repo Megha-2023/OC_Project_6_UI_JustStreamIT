@@ -10,6 +10,10 @@ body {
 }
 h2{
   color: rgb(236, 56, 191);
+  margin-left: 10px;
+}
+h4{
+  color: rgb(236, 56, 191);
 }
 .header-container {
   display: flex;
@@ -40,10 +44,6 @@ h2{
 }
 .nav_links li a:hover {
   color: #43b560;
-}
-div{
-  display: block;
-  unicode-bidi: isolate;
 }
 .banner{
   margin: 10px 30px 10px 30px;
@@ -106,36 +106,67 @@ div{
   background-color:dimgrey;
   color:aliceblue;
 }
-.top-rated-movie-img {
-  width: 100%;
-  object-fit: cover;
+.Category{
+  display: grid;
 }
 .carousel-btn-left, .carousel-btn-right {
-  cursor: pointer;
   position: absolute;
-  width: auto;
-  height: 50px;
-  color:rgb(236, 56, 191);
-  font-weight: bold;
+   
+
+  /* basic styling */
+
+  padding: 0;
+  margin-top: 50px;
+  border-radius: 50%;
+  background-color: pink;
+  border: none;
+
   font-size: 30px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
+  cursor: pointer;
+
+  transition: color ease;
+}
+.carousel-btn-left:hover , .carousel-btn-right:hover{
+  background-color: rgb(238, 60, 149);
 }
 .carousel-btn-right{
   right: 0;
-  border-radius: 0 3px 3px 0;
+  
 }
-.category-movies {
-  display: inline;
+.category0_movies, .category1_movies,.category2_movies,.category3_movies {
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 30px;
 }
-.top-rated-carousel{
-  position: relative;
-  margin-left: 60px;
+.category0_movies li, .category1_movies li,.category2_movies li,.category3_movies li {
+  flex: 1;
+   display: flex;
+  flex-direction: column;
+   align-items: center;
+   list-style: none;
+   width: 155px;
+   height: 260px;
+   margin: 5px;
+  border-radius: 12px;
+  border: 1px solid rgb(238, 60, 149);
+  text-align: center;
+  background: #323333;
 }
-.carousel-single-movie{
-  display: inline;
-  width: 153px;
+.category0_movies li:hover, .category1_movies li:hover,.category2_movies li:hover,.category3_movies li:hover{
+  transform: scale(1.2);
+  cursor: pointer;
+}
+.category0_movies li img, .category1_movies li img,.category2_movies li img,.category3_movies li img  {
   height: 200px;
-  margin-right: 10px;
+  width: 155px;
+  margin-top: 5px;
+  border-radius: 5px;
+  border: 1px solid
+}
+.category0_movies h2, .category1_movies h2,.category2_movies h2,.category3_movies h2 {
+
+  color: #fff;
+  font-size: small;
+
 }

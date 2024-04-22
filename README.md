@@ -1,10 +1,10 @@
-# JustStremaIT Frontend Guidelines
+# JustStremaIT Project Guidelines
 
-This reopository contains frontend and backend code for teh JustStreamIT website to stream through various movies by categories and imdb ratings.
+This reopository contains frontend and backend code for the JustStreamIT website to stream through various movies by categories and imdb ratings.
 Frontend code has been written in HTML/CSS/JavaScript.
-First of all, to retrieve data from API, following steps must be followed:
+Backend data is fetched from an existing API.
 
-## OCMovies-API: Test API providing movie information
+### OCMovies-API: Test API providing movie information
 
 The API provides these endpoints to get detailed infomation about movies filtered by
 various criteria such as genre, IMDB score or year. Endpoints allow users to retrieve
@@ -22,6 +22,7 @@ This locally-executable API can be installed and executed from [http://localhost
 6. Create and populate the project database with `$ python manage.py create_db`
 7. Run the server with `$ python manage.py runserver`
 
-### To Start Frontend
+### For Frontend
 
-1. From frontend folder, open index.html in the local browser.
+1. To fetch data from API, axios library needs to be installed in javascript. 
+2. From frontend folder, open index.html in the local browser.

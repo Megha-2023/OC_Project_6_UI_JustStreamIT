@@ -10,7 +10,8 @@ body {
 }
 h2{
   color: rgb(236, 56, 191);
-  margin-left: 10px;
+  margin-left: 40px;
+  margin-bottom: 0px;
 }
 h4{
   color: rgb(236, 56, 191);
@@ -23,7 +24,6 @@ h4{
   background-color: rgb(243, 82, 189);
   font-size: medium;
 }
-
 .header-container img {
   margin-left: 1px;
   margin-right: auto;
@@ -32,7 +32,6 @@ h4{
   width: 140px;
   height: 74px;
 }
-
 .nav_links li {
   display: inline-block;
   padding: 0px 20px;
@@ -46,37 +45,51 @@ h4{
   color: #43b560;
 }
 .banner{
-  margin: 10px 30px 10px 30px;
-  width: 95%;
+  margin: 10px 40px 10px 40px;
+  width: 90%;
   height: 250px;
   align-items: center;
-  display: flex;
   overflow: hidden;
-  justify-content: space-between;
   background-color: rgb(57, 59, 56);
-  color: antiquewhite;
+  color: antiquewhite; 
   box-sizing: inherit;
 }
-.best-movie-title{
-  position: relative;
-  font-size: x-large;
-  font-style: italic;
-  color: rgb(238, 223, 235);
-}
-.best-movie-img{
-  width: 40%;
-}
-.best-movie-img img {
-  margin-top: 2px;
-  position: relative;
-  height: 250px;
-  width: 250px;
+.best-movie{
+  position: absolute;
+  margin-left: 100px;
+  width: 80%;
+  height: 245px;
+  opacity: 1;
   object-fit: cover;
+  background-position: center;
+  background-repeat:no-repeat ;
 }
-.play_now{
+.best-movie-title {
+  font-size:xx-large;
+  color: rgb(236, 175, 201);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin-left: 200px;
+}
+.best-movie-details{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: medium;
+  margin-left: 200px;
+}
+.play-now{
   position: relative;
   width:fit-content;
   height: 50px;
+  margin-left: 200px;
+  border-radius: 20%;
+  font-size: medium;
+  background-color: rgb(236, 56, 191);
+  font-weight: bold;
+}
+.more-info{
+  position: relative;
+  width:fit-content;
+  height: 50px;
+  margin-left: 5px;
   border-radius: 20%;
   font-size: medium;
   background-color: rgb(236, 56, 191);
@@ -84,19 +97,28 @@ h4{
 }
 .modal {
   display: none; /* Hidden by default */
-  position: absolute; /* Stay in place */
-  left: 25%;
-  top: 50px;
-  width: 50%; /* Full width */
-  height: 100%; /* Full height */
+  position:absolute;/* Stay in place */
+  left: 20%;
+  top: 70px;
+  width: 65%;
+  height:max-content;
   overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(233, 161, 223);
+  background-color: rgb(236, 194, 231);
   border: 2px black solid;
 }
 .details_table, td{
   margin: 10px 10px;
   padding: 10px;
   border-radius: 5px;
+  border: 0.5px solid black;
+  color: black;
+  font-weight: bold;
+}
+.header{
+  color: rgb(4, 4, 80);
+  font-weight: bold;
+  background-color: rgb(164, 167, 168);
+  text-align: center;
 }
 .close{
   width: fit-content;
@@ -108,13 +130,10 @@ h4{
 }
 .Category{
   display: grid;
+  margin-top: 0;
 }
 .carousel-btn-left, .carousel-btn-right {
   position: absolute;
-   
-
-  /* basic styling */
-
   padding: 0;
   margin-top: 50px;
   border-radius: 50%;
@@ -141,32 +160,49 @@ h4{
 }
 .category0_movies li, .category1_movies li,.category2_movies li,.category3_movies li {
   flex: 1;
-   display: flex;
+  display: flex;
   flex-direction: column;
-   align-items: center;
-   list-style: none;
-   width: 155px;
-   height: 260px;
-   margin: 5px;
+  align-items: center;
+  list-style: none;
+  width: 155px;
+  height: 220px;
+  margin: 5px;
   border-radius: 12px;
   border: 1px solid rgb(238, 60, 149);
   text-align: center;
   background: #323333;
 }
 .category0_movies li:hover, .category1_movies li:hover,.category2_movies li:hover,.category3_movies li:hover{
-  transform: scale(1.2);
+  transform: scale(1.1);
   cursor: pointer;
 }
 .category0_movies li img, .category1_movies li img,.category2_movies li img,.category3_movies li img  {
-  height: 200px;
+  height: 180px;
   width: 155px;
   margin-top: 5px;
   border-radius: 5px;
   border: 1px solid
 }
 .category0_movies h2, .category1_movies h2,.category2_movies h2,.category3_movies h2 {
-
   color: #fff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: small;
+  margin-left: 10px;
+  margin-top: 0px;
+}
+.footer{
+  font-size: small;
+  color: aliceblue;
+  margin: 5px;
+  border-top: 0.5px solid antiquewhite;
+}
 
+@media all and (width: 480px) {
+  .Category{
+    width: 91%;
+  }
+  .category0_movies li, .category1_movies li,.category2_movies li,.category3_movies li {
+    width: 150px;
+  }  
+  
 }

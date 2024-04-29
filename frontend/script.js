@@ -69,7 +69,7 @@ function showBestMovie(bestMovieData) {
   const bestMovie_title = document.querySelector(".best-movie-title");
   bestMovie_title.innerHTML = bestMovieData.title;
   const bestMovie_details = document.querySelector(".best-movie-details");
-  bestMovie_details.innerHTML = "Genres: " + bestMovieData.genres + "<br> Year: " + bestMovieData.year + "<br> IMDB SCORE: " + bestMovieData.imdb_score;
+  bestMovie_details.innerHTML = "Genres: " + bestMovieData.genres + "<br> Year: " + bestMovieData.year + "<br> IMDB Score: " + bestMovieData.imdb_score;
   
   // Modal window opens while clicking on 'More detail' button
   show_modal_window(bestMovieData.id, false);
@@ -85,20 +85,38 @@ function showBestMovie(bestMovieData) {
 async function movieCarousel(start, movieData, catNumber) {
   // Function takes movie data from an array and makes carousel
   count = start + 6;
+  let movies;
   document.querySelector(`.category${catNumber}_movies`).innerHTML = "";
   for (let i=start; i<=count; i++){
     // check for image url exists or not
-    if (checkImg(movieData[i].image_url)){  
+    test = await checkImg(movieData[i].image_url);
+    //if (test.status === 404 || !test)
+    if (test.status === 404 || !test){
+      url = movieData[i+1].image_url;
+      alt = "Image Not found";
+      id = movieData[i+1].id;
+      title = movieData[i+1].title;
+      // make li tag with single movie image and title
+      movies=`<li id=${id} onclick="show_modal_window(${id}, ${true})"><img id=${id} src="${url}" alt="${alt}"> <h2>${title}</h2>
+      </li>`;
+      i += 1;
+      //count += 1;
+    }
+    else{
       url = movieData[i].image_url;
       alt = "";
       id = movieData[i].id;
       title = movieData[i].title;
       // make li tag with single movie image and title
-      const movies=`<li id=${id} onclick="show_modal_window(${id}, ${true})"><img id=${id} src="${url}" alt="${alt}"> <h2>${title}</h2>
+      movies=`<li id=${id} onclick="show_modal_window(${id}, ${true})"><img id=${id} src="${url}" alt="${alt}"> <h2>${title}</h2>
       </li>`;
-      document.querySelector(`.category${catNumber}_movies`).innerHTML += movies;
+      //document.querySelector(`.category${catNumber}_movies`).innerHTML += movies;
     }
-  }
+    document.querySelector(`.category${catNumber}_movies`).innerHTML += movies;
+    //test = await checkImg(movieData[i].image_url);
+    //if (test.status === 404 || !test){  
+    }
+  
   // call slider function with starting index, array and category number
   slider(start, movieData, catNumber); 
 }
@@ -131,13 +149,13 @@ function slider(prevStartIndex, movieData, catNumber){
 
 async function checkImg(url) {
   // Function checks image url, if doesn't exist returns false
-  response = await fetch(url);
-  if (response.status === 404 || !response)
-  {
-    console.log("Link doen't exist on API:", error);
-    return false;
+  try{
+    response = await fetch(url);
   }
-  return true;
+  catch(error){
+    return false
+  }
+  return response
 }
 
 function show_modal_window(movieID, visible){
@@ -149,10 +167,12 @@ function show_modal_window(movieID, visible){
     //var btn = document.getElementById("more-details");
     var close_btn = document.getElementById("close");
     const description = document.getElementById("description");
-    //descr_str = "<tr><td>Movie: </td><td>" + res.data.title +"</td><td>";
+
     descr_str = ("<tr><td class='header'>Movie: </td><td>" + res.data.title + "</td><td><img src=" + res.data.image_url + "></img></td>" +
                 "<tr><td class='header'>Actors: </td><td>" + res.data.actors + "</td>" +
                 "<tr><td class='header'>Director: </td><td>" + res.data.directors + "</td>" +
+                "<tr><td class='header'>Genre: </td><td>" + res.data.genres + "</td>" +
+                "<tr><td class='header'>IMDB Score: </td><td>" + res.data.imdb_score + "</td>" +
                 "<tr><td class='header'>Release date: </td><td>" + res.data.date_published + "</td>" +
                 "<tr><td class='header'>Duration: </td><td>" + res.data.duration + "</td>" +
                 "<tr><td class='header'>Box Office Result: </td><td>" + res.data.rated + "</td>" +

@@ -12,7 +12,7 @@ information for individual movies or lists of movies.
 
 ### Installation of Backend
 
-This locally-executable API can be installed and executed from [http://localhost:8000/api/v1/titles/](http://localhost:8000/api/v1/titles/) using the following steps.
+This locally-executable API can be installed and executed from [http://127.0.0.1:8000//api/v1/titles/](http://127.0.0.1:8000/api/v1/titles/) using the following steps.
 
 1. Clone this repository using `$ git clone https://github.com/OpenClassrooms-Student-Center/   OCMovies-API-EN-FR.git` (you can also download the code [as a zip file](https://github.com/OpenClassrooms-Student-Center/OCMovies-API-EN-FR/archive/refs/heads/master.zip))
 2. Move to the ocmovies-api root folder with `$ cd ocmovies-api-en`
